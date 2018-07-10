@@ -1,0 +1,13 @@
+# /home/dombo/.config/tmuxinator/monitoring.yml
+
+name: monitoring
+root: ~/
+
+windows:
+  - overview:
+      layout: main-horizontal
+      panes:
+        - htop:
+          - htop
+        - syslog:
+          - tail -f /var/log/syslog
