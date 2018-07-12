@@ -122,6 +122,11 @@ export EDITOR="code -w -n"
 # Set the path up to defer to linuxbrew installed files
 export PATH="${HOME}/.linuxbrew/bin:${PATH}"
 
+# Set up NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 ### bash-it
 
 # Path to the bash it configuration
@@ -129,7 +134,7 @@ export BASH_IT="${HOME}/Code/Dombo/dotfiles/bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
+export BASH_IT_THEME="${HOME}/Code/Dombo/dotfiles/bash_it_custom/dombo/dombo.theme.bash"
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.

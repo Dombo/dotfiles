@@ -10,3 +10,4 @@ brew "awscli"
 
 # Git
 brew "tig"
+brew "hub"

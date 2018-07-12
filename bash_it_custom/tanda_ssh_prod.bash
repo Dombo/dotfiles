@@ -13,17 +13,18 @@ tanda_ssh_prod () {
     BASTION_REGION=sydney
 
     if [[ $1 == "--eu" ]]; then
-    shift
-    ROLE_REGION=eu
-    BASTION_REGION=frankfurt
+        shift
+        ROLE_REGION=eu
+        BASTION_REGION=frankfurt
     fi
 
     type=$1
     available_types=($(aws ec2 describe-instances --profile tanda-${ROLE_REGION}-operations-admin --filters "Name=instance-state-name,Values=running" --query "Reservations[*].Instances[0].Tags[?Key=='type'].Value" | jq '[.[][0]] | unique | .[] | select(. != null)' | xargs | cut -d '"' -f 2))
 
     if [[ ! " ${available_types[@]} " =~ " ${type} " ]]; then
-    echo "Please use one of the available types: ${available_types[@]}"
-    exit 1
+        echo "Please use one of the available types: ${available_types[@]}"
+        read -p "Press any key to continue"
+        return
     fi
 
     ip=$(aws ec2 describe-instances --profile tanda-${ROLE_REGION}-operations-admin --filters "Name=instance-state-name,Values=running" "Name=tag:type,Values=${type}" --query 'Reservations[*].Instances[0].NetworkInterfaces[0].PrivateIpAddress' | jq '.[]' | sort -R | head -n 1 | cut -d '"' -f 2)

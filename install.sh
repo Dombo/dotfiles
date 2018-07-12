@@ -60,12 +60,21 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/i
 brew tap homebrew/bundle
 brew bundle
 
+### NVM
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+### YARN
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install --yes --no-install-recommends yarn
+
 ### STOW
  
 stow --target=${HOME} tmuxinator
-stow --target=${HOME} bash
+stow --target=${HOME} tmux
 stow --target=${HOME} rvm
 stow --target=${HOME} git
+stow --target=${HOME} bash
 # stow --target=${HOME} aws_vault
 # stow --target=${HOME} ssh_helper_gnome_extension
 # stow --target=${HOME} yubikey

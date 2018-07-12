@@ -1,0 +1,25 @@
+# /home/dombo/.config/tmuxinator/tanda-core.yml
+
+name: tanda-core
+root: ~/Code/TandaHQ/payaus
+
+ssh-local-dev-server: &ssh-local-dev-server ssh deployer@local.tanda.co
+
+pre_window: 
+  - source /usr/share/rvm/scripts/rvm
+  - rvm use ruby-2.3.1
+
+windows:
+  - overview:
+      layout: main-vertical
+      panes:
+        - dev-server-session:
+          - *ssh-local-dev-server
+        - syncer:
+          - bundle
+          - ./useful_scripts/dev-server/start-sync.sh entangler
+        - web-server:
+          - *ssh-local-dev-server
+          - cd ~/tanda
+          - bundle
+          - tanda-server
