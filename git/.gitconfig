@@ -18,3 +18,5 @@
 	cmd = "code --wait --diff  "
 [merge]
 	tool = vscode
+[push]
+	default = current

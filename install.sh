@@ -55,6 +55,8 @@ git config --global mergetool.vscode.cmd "code --wait $MERGED"
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
+git config --global push.default current
+
 ### BREW
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 brew tap homebrew/bundle
