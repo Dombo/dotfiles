@@ -119,8 +119,8 @@ fi
 # Set vscode as the default editor (config files and such)
 export EDITOR="code -w -n"
 
-# Set the path up to defer to linuxbrew installed files
-export PATH="${HOME}/.linuxbrew/bin:${PATH}"
+# Set the path up to defer to linuxbrew installed files with fallback for .bin/
+export PATH="${HOME}/.linuxbrew/bin:${HOME}/.bin:${PATH}"
 
 # Set up NVM
 export NVM_DIR="$HOME/.nvm"
