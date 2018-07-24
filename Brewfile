@@ -16,3 +16,4 @@ brew "hub"
 # Brew maintainers and CircleCI release engineers are squabbling - just install it from source
 # curl -o ${HOME}/.bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x ${HOME}/.bin/circleci
 # brew "circleci"
+brew "ansible"
