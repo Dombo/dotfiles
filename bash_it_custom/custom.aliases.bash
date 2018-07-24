@@ -24,3 +24,6 @@ alias dotfiles="code \"${HOME}/Code/Dombo/dotfiles\""
 
 # Tanda
 alias tanda-ssh="ssh deployer@local.tanda.co"
+
+# Bash History
+alias hgrep="history | grep --color"
