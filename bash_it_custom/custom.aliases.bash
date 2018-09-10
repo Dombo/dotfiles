@@ -8,6 +8,7 @@ alias gs="git status -su"
 alias ga="git add --all"
 alias gc="git commit -m"
 alias gp="git push"
+alias gb="git checkout -b"
 
 # GitHub
 alias pr="hub pull-request | xargs firefox --new-tab"
