@@ -10,13 +10,24 @@
 	rebase = true
 [rebase]
 	autoStash = true
+[mergetool]
+	keepBackup = false
+	trustExitCode = false
+	keepTemporaries = false
 [mergetool "vscode"]
-	cmd = "code --wait "
-[diff]
-	tool = vscode
-[difftool "vscode"]
-	cmd = "code --wait --diff  "
+	cmd = "code --disable-gpu --wait -"
+[mergetool "idea"]
+    cmd = /usr/local/bin/idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    
 [merge]
-	tool = vscode
+	tool = idea
+[difftool]
+	trustExitCode = false
+[difftool "vscode"]
+	cmd = "code --disable-gpu --wait --diff -"
+[difftool "idea"]
+	cmd = /usr/local/bin/idea merge \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = idea
 [push]
 	default = current

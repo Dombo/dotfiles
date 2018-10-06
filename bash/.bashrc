@@ -87,11 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -117,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 # Set vscode as the default editor (config files and such)
-export EDITOR="code -w -n"
+export EDITOR="code --disable-gpu -w -n"
 
 # Set the path up to defer to linuxbrew installed files with fallback for .bin/
 export PATH="${HOME}/.linuxbrew/bin:${HOME}/.bin:${PATH}"
@@ -184,4 +179,11 @@ export BASH_IT_CUSTOM="${HOME}/Code/Dombo/dotfiles/bash_it_custom"
 # export BASH_IT_RELOAD_LEGACY=1
 
 # Load Bash It
-source "$BASH_IT"/bash_it.sh
+source "$BASH_IT/bash_it.sh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/serverless.bash ] && . /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash ] && . /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash
