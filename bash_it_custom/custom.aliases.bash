@@ -11,13 +11,10 @@ alias gp="git push"
 alias gb="git checkout -b"
 
 # Code
-alias code="code --disable-gpu"
+alias code="code --disable-gpu --verbose "
 
 # GitHub
-# pr bug
-# pr enhancement
-# pr cost-saving
-# pr ready\ for\ review
+# pr bug,enhancement,cost-saving,ready-for-review
 pr() {
     hub pull-request -a dombo -l $1 | xargs firefox --new-tab
 }
