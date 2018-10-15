@@ -1,0 +1,26 @@
+# /home/dombo/.config/tmuxinator/tanda-ms-db.yml
+
+name: tanda-ms-db
+root: ~/Code/TandaHQ/tanda-infrastructure/
+
+pre_window: 
+  - source $HOME/.nvm/nvm.sh
+  - nvm use
+
+windows:
+  - overview:
+      layout: main-vertical
+      panes:
+        - ms-db-pitr:
+          - cd ms-db-pitr-system
+          - yarn test
+          - yarn lint
+        - ms-db-service:
+          - cd ms-db-service
+          - yarn test
+          - yarn lint
+        - ms-lib:
+          - cd ms-lib
+          - yarn test
+          - yarn lint
+          
