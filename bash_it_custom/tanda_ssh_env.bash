@@ -47,5 +47,5 @@ tanda_ssh_env () {
     ssh-add -l
 
     ip=$(aws ec2 describe-instances --profile ${PROFILE} --filters "Name=instance-state-name,Values=running" "Name=tag:type,Values=${type}" --query 'Reservations[*].Instances[0].NetworkInterfaces[0].PrivateIpAddress' | jq '.[]' | sort -R | head -n 1 | cut -d '"' -f 2)
-    ssh -A -tt ubuntu@bastion.${BASTION_ENV}.${BASTION_REGION}.adnat.co ssh -tt ubuntu@${ip}
+    ssh -A -tt ubuntu@bastion.${BASTION_ENV}.${BASTION_REGION}.adnat.co ssh -tt ubuntu@${ip} "sudo --user=ruby --login"
 }
