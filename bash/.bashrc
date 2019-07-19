@@ -187,3 +187,6 @@ source "$BASH_IT/bash_it.sh"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash ] && . /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/dombo/.sdkman"
+[[ -s "/home/dombo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dombo/.sdkman/bin/sdkman-init.sh"
