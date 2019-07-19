@@ -7,7 +7,7 @@ ssh-local-dev-server: &ssh-local-dev-server ssh deployer@local.tanda.co
 
 pre_window: 
   - source /usr/share/rvm/scripts/rvm
-  - rvm use ruby-2.3.1
+  - rvm use ruby-2.3.8
 
 windows:
   - overview:
