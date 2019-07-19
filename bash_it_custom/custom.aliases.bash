@@ -41,7 +41,7 @@ alias pbpaste="xclip -selection clipboard -o"
 alias sshkey="xclip -selection clipboard < ~/.ssh/id_rsa.pub"
 
 # Dotfiles
-alias dotfiles="code --disable-gpu --performance \"${HOME}/Code/Dombo/dotfiles\""
+alias dotfiles="code --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
 
 # Tanda
 alias tanda-ssh="ssh deployer@local.tanda.co"
