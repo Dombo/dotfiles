@@ -53,3 +53,9 @@ alias hgrep="history | grep --color"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Kubernetes
+kube_token() {
+    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}') | grep token: | awk '{print $2}'
+}
+alias ktoken="kube_token | pbcopy"
