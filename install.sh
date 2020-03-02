@@ -67,12 +67,19 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global push.default current
 
 ### DEVEX
+### bash-it
+echo "########################################################"
+echo "Installing bash-it"
+echo "########################################################"
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ./bash_it
+
 ### RVM
 echo "########################################################"
 echo "Installing RVM (not supported by brew sadly) - might take a while to validate gpg"
 echo "########################################################"
 gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
+
 
 ### STOW
 stow --adopt --target=${HOME} tmuxinator
@@ -90,6 +97,10 @@ stow --adopt --target=${HOME} bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 brew tap homebrew/bundle
 brew bundle
+
+### Finishing Up
+### Checkout was not possible over SSH, now it is so let's drop back to SSH remote
+git remote set-url origin git@github.com:Dombo/dotfiles.git
 
 ### Helpers
 
