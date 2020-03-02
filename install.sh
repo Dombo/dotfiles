@@ -67,6 +67,9 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global push.default current
 
 ### DEVEX
+### caps for ctrl
+### Why of course
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 ### bash-it
 echo "########################################################"
 echo "Installing bash-it"
