@@ -68,8 +68,9 @@ git config --global push.default current
 
 ### DEVEX
 ### caps for ctrl
-### Why of course
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+### terminal keybindings
+cat ./gnome-terminal/org-gnome-terminal-legacy-keybindings.txt | dconf load /org/gnome/terminal/legacy/keybindings/
 ### bash-it
 echo "########################################################"
 echo "Installing bash-it"

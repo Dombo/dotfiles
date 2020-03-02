@@ -1,0 +1,5 @@
+[/]
+move-tab-left='<Shift><Alt>Page_Up'
+move-tab-right='<Shift><Alt>Page_Down'
+next-tab='<Shift><Alt>Right'
+prev-tab='<Shift><Alt>Left'
