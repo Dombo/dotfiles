@@ -6,29 +6,17 @@
 	gpgsign = true
 [alias]
 	up = pull --rebase --autostash
-	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [pull]
 	rebase = true
 [rebase]
 	autoStash = true
-[mergetool]
-	keepBackup = false
-	trustExitCode = false
-	keepTemporaries = false
-[mergetool "vscode"]
-	cmd = "code --disable-gpu --wait -"
-[mergetool "idea"]
-    cmd = /usr/local/bin/idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
-    
 [merge]
-	tool = idea
-[difftool]
-	trustExitCode = false
-[difftool "vscode"]
-	cmd = "code --disable-gpu --wait --diff -"
-[difftool "idea"]
-	cmd = /usr/local/bin/idea merge \"$LOCAL\" \"$REMOTE\"
+	tool = vscode
+[mergetool "vscode"]
+	cmd = "code --wait "
 [diff]
-	tool = idea
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
 [push]
 	default = current

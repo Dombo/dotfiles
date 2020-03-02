@@ -2,26 +2,32 @@
 EMAIL="dom.hutton@gmail.com"
 NAME="Dom Hutton"
 ### DEPENDENCIES
-sudo apt-get install stow git xclip gpg curl tmux jq htop rvm build-essential file --yes
+sudo apt-get install stow git xclip gpg curl tmux jq htop build-essential file --yes
 
 ### SSH
 yes y | ssh-keygen -t rsa -b 4096 -C "${EMAIL}" -f ~/.ssh/id_rsa -N ""
 echo "########################################################"
 echo "Public SSH key material"
-echo "It is on your clipboard too, paste it into github.com/settings/ssh/new"
 echo "########################################################"
 cat ~/.ssh/id_rsa.pub
-cat ~/.ssh/id_rsa.pub | xclip -sel clip
 read -n 1 -s -r -p 'Press any key to continue';echo
 
 ### KEYBASE
 if ! [ -x "$(command -v keybase)" ]; then
+  echo "########################################################"
+  echo "Installing Keybase"
+  echo "########################################################"
   curl -O https://prerelease.keybase.io/keybase_amd64.deb
   sudo dpkg -i keybase_amd64.deb
   sudo apt-get install -f --yes
   rm -f keybase_amd64.deb
 fi
+echo "########################################################"
+echo "About to run keybase"
+echo "Login and add the device, then press any key to continue this script"
+echo "########################################################"
 run_keybase
+read -n 1 -s -r -p 'Press any key to continue';echo
 
 ### GPG
 keybase pgp export | gpg --import
@@ -39,6 +45,9 @@ echo "It is on your clipboard too, paste it into github.com/settings/gpg/new (if
 echo "########################################################"
 gpg --armor --export ${KEY}
 gpg --armor --export ${KEY} | xclip -sel clip
+echo "########################################################"
+echo "Public GPG key material is on your clipboard, paste it into github.com/settings/gpg/new (if this is a key rotation)"
+echo "########################################################"
 read -n 1 -s -r -p 'Press any key to continue';echo
 
 ### GIT
@@ -57,29 +66,30 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
 git config --global push.default current
 
-### BREW
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-brew tap homebrew/bundle
-brew bundle
-
-### NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-### YARN
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install --yes --no-install-recommends yarn
+### DEVEX
+### RVM
+echo "########################################################"
+echo "Installing RVM (not supported by brew sadly) - might take a while to validate gpg"
+echo "########################################################"
+gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable
 
 ### STOW
- 
-stow --target=${HOME} tmuxinator
-stow --target=${HOME} tmux
-stow --target=${HOME} rvm
-stow --target=${HOME} git
-stow --target=${HOME} bash
+stow --adopt --target=${HOME} tmuxinator
+stow --adopt --target=${HOME} tmux
+stow --adopt --target=${HOME} rvm
+stow --adopt --target=${HOME} yarn
+stow --adopt --target=${HOME} git
+stow --adopt --target=${HOME} bash
 # stow --target=${HOME} aws_vault
 # stow --target=${HOME} ssh_helper_gnome_extension
 # stow --target=${HOME} yubikey
+
+### BREW
+# Note: May need to configure terminal emulator to run shell as login
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+brew tap homebrew/bundle
+brew bundle
 
 ### Helpers
 

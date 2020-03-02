@@ -178,12 +178,13 @@ export BASH_IT_CUSTOM="${HOME}/Code/Dombo/dotfiles/bash_it_custom"
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
+# Brew managed NVM Sourcing
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Load Bash It
 source "$BASH_IT/bash_it.sh"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/serverless.bash ] && . /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash ] && . /home/dombo/Code/TandaHQ/tanda-infrastructure/ms-db-service/node_modules/tabtab/.completions/sls.bash
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
