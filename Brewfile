@@ -16,6 +16,7 @@ brew "hub"
 brew "nvm"
 brew "yarn"
 # rvm install in install.sh
+brew "go"
 
 # Misc
 # Brew maintainers and CircleCI release engineers are squabbling - just install it from source
