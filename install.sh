@@ -71,6 +71,8 @@ git config --global push.default current
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 ### terminal keybindings
 cat ./gnome-terminal/org-gnome-terminal-legacy-keybindings.txt | dconf load /org/gnome/terminal/legacy/keybindings/
+### workspaces span multi-monitor congifs (who thought this was a good idea)
+gsettings set org.gnome.mutter workspaces-only-on-primary "false"
 ### bash-it
 echo "########################################################"
 echo "Installing bash-it"
