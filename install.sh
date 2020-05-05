@@ -73,6 +73,15 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 cat ./gnome-terminal/org-gnome-terminal-legacy-keybindings.txt | dconf load /org/gnome/terminal/legacy/keybindings/
 ### workspaces span multi-monitor congifs (who thought this was a good idea)
 gsettings set org.gnome.mutter workspaces-only-on-primary "false"
+
+### vscodium editor
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
+sudo apt-add-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
+sudo apt update
+sudo apt install codium
+### vscodium base extensions
+codium --install-extension k--kato.intellij-idea-keybindings
+
 ### bash-it
 echo "########################################################"
 echo "Installing bash-it"
