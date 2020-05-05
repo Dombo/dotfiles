@@ -93,6 +93,7 @@ stow --adopt --target=${HOME} yarn
 stow --adopt --target=${HOME} git
 stow --adopt --target=${HOME} bash
 stow --adopt --target=${HOME} mozilla
+stow --adopt --target=/usr/lib/firefox mozilla-firefox-bin # Needs sudo
 # stow --target=${HOME} aws_vault
 # stow --target=${HOME} ssh_helper_gnome_extension
 # stow --target=${HOME} yubikey
