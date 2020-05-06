@@ -118,11 +118,3 @@ brew bundle
 ### Finishing Up
 ### Checkout was not possible over SSH, now it is so let's drop back to SSH remote
 git remote set-url origin git@github.com:Dombo/dotfiles.git
-
-### Helpers
-
-# Clone all the repos belonging to a github organisation
-# GITHUB_PAT=""
-# GITHUB_ORGANISATION=""
-# curl -u ${GITHUB_PAT}:x-oauth-basic -s \
-#  https://api.github.com/orgs/${GIT_ORGANISATION}/repos?per_page=100 | ruby -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["ssh_url"]} ]}'
