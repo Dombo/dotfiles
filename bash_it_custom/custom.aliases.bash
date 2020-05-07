@@ -36,6 +36,15 @@ alias pbpaste="xclip -selection clipboard -o"
 # SSH key helper
 alias sshkey="xclip -selection clipboard < ~/.ssh/id_rsa.pub"
 
+onepassword_signin() {
+    eval $(op signin my)
+}
+# OnePassword
+alias ops="onepassword_signin"
+
+# Hiber
+alias hiberpass="op get item Hiber\ Lastpass | jq -r '.details.fields[] | select(.designation==\"password\").value' | pbcopy"
+
 # Dotfiles
 alias dotfiles="codium --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
 
