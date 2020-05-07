@@ -11,9 +11,6 @@ alias gp="git push"
 alias gb="git checkout -b"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# Code
-alias code="code --disable-gpu --new-window "
-
 # GitHub
 # pr bug,enhancement,cost-saving,ready-for-review
 pr() {
@@ -27,7 +24,6 @@ tmuxinator_start() {
     if [ -z "$2" ]; then SESSION_NAME=""; else SESSION_NAME="-n $2"; fi 
     tmuxinator start $1 $SESSION_NAME
 }
-alias tanda-core="tmuxinator_start tanda-core "
 alias txl='tmux ls'
 alias txa='tmux a -t'
 alias txk='tmux kill-session -t'
@@ -41,10 +37,7 @@ alias pbpaste="xclip -selection clipboard -o"
 alias sshkey="xclip -selection clipboard < ~/.ssh/id_rsa.pub"
 
 # Dotfiles
-alias dotfiles="code --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
-
-# Tanda
-alias tanda-ssh="ssh deployer@local.tanda.co"
+alias dotfiles="codium --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
 
 # Bash History
 alias hgrep="history | grep --color"
