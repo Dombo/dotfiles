@@ -1,0 +1,8 @@
+[core]
+account = dominic@hiber.global
+project = hiber-production
+
+[compute]
+zone = europe-west4-c
+region = europe-west4
+
