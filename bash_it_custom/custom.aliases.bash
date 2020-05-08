@@ -41,9 +41,12 @@ onepassword_signin() {
 }
 # OnePassword
 alias ops="onepassword_signin"
+alias opshiberlp="op get item Hiber\ Lastpass | jq -r '.details.fields[] | select(.designation==\"password\").value'"
+alias opshiberlpclip="op get item Hiber\ Lastpass | jq -r '.details.fields[] | select(.designation==\"password\").value' | pbcopy"
 
 # Hiber
-alias hiberpass="op get item Hiber\ Lastpass | jq -r '.details.fields[] | select(.designation==\"password\").value' | pbcopy"
+alias hiberlp_unsafe="LPASS_DISABLE_PINENTRY=1 lpass login dominic@hiber.global"
+alias hiberlp="ops && opshiberlp | hiberlp_unsafe"
 
 # Dotfiles
 alias dotfiles="codium --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
