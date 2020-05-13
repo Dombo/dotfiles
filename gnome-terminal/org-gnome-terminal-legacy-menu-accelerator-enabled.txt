@@ -1,0 +1,2 @@
+[/]
+menu-accelerator-enabled=false
