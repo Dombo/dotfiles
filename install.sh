@@ -72,6 +72,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 ### terminal keybindings
 cat ./gnome-terminal/org-gnome-terminal-legacy-keybindings.txt | dconf load /org/gnome/terminal/legacy/keybindings/
 cat ./gnome-terminal/org-gnome-terminal-legacy-menu-accelerator-enabled.txt | dconf load /org/gnome/terminal/legacy/
+cat ./gnome-terminal/org-gnome-settings-daemon-plugins-media-keys.txt | dconf load /org/gnome/settings-daemon/plugins/media-keys/
 ### workspaces span multi-monitor congifs (who thought this was a good idea)
 gsettings set org.gnome.mutter workspaces-only-on-primary "false"
 

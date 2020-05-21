@@ -1,0 +1,3 @@
+[/]
+www=['<Primary><Alt>w']
+home=['<Primary><Alt>f']
