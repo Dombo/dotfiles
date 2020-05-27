@@ -47,8 +47,9 @@ alias opshiberlpclip="opshiberlp | pbcopy"
 # Hiber
 alias hiberlp_unsafe="LPASS_DISABLE_PINENTRY=1 lpass login dominic@hiber.global"
 alias hiberlp="ops && opshiberlp | hiberlp_unsafe"
-alias hibergss="lpass show gsserver-delft --password | pbcopy && ssh gsserver"
-alias hibergskit039="lpass show gskit036 --password | pbcopy && ssh gskit036"
+alias hibergss="lpass show gsserver-delft --password | pbcopy && echo \"Now you can: ssh gsserver\""
+alias hibergskit036="lpass show gskit036 --password | pbcopy && echo \"Now you can: ssh gskit036\""
+alias hibergskit039="lpass show gskit039 --password | pbcopy && echo \"Now you can: ssh gskit039\""
 # Dotfiles
 alias dotfiles="codium --disable-gpu \"${HOME}/Code/Dombo/dotfiles\""
 
