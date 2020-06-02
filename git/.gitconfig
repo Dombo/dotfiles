@@ -6,6 +6,9 @@
 	gpgsign = true
 [alias]
 	up = pull --rebase --autostash
+	set-upstream = \
+       !git branch \
+           --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [pull]
 	rebase = true
 [rebase]
