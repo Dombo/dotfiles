@@ -14,13 +14,14 @@
 [rebase]
 	autoStash = true
 [merge]
-	tool = vscode
-[mergetool "vscode"]
-	cmd = "code --wait "
+    tool = intellij
+[mergetool "intellij"]
+    cmd = /home/dom/.local/bin/goland merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+    trustExitCode = true
 [diff]
-	tool = vscode
-[difftool "vscode"]
-	cmd = "code --wait --diff  "
+    tool = intellij
+[difftool "intellij"]
+    cmd = /home/dom/.local/bin/goland diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
 [push]
 	default = current
 [url "ssh://git@github.com/"]
