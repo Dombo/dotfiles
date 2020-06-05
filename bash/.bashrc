@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 # Set vscode as the default editor (config files and such)
-export EDITOR="code --disable-gpu -w -n"
+export EDITOR="codium -w -n"
 
 # Set the path up to defer to linuxbrew installed files with fallback for .bin/
 export PATH="${HOME}/.linuxbrew/bin:${HOME}/.bin:${PATH}"
