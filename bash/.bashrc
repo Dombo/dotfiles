@@ -114,8 +114,11 @@ fi
 # Set vscode as the default editor (config files and such)
 export EDITOR="codium -w -n"
 
+# set PATH, MANPATH, INFOPATH account for homebrew packages
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # Set the path up to defer to linuxbrew installed files with fallback for .bin/
-export PATH="${HOME}/.linuxbrew/bin:${HOME}/.bin:${PATH}"
+export PATH="${HOME}/.bin:${PATH}"
 
 # Set up NVM
 export NVM_DIR="$HOME/.nvm"
@@ -195,6 +198,10 @@ export PATH="$PATH:$HOME/.local/bin"
 export GOPATH="$HOME/go"
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH:$GOBIN
+
+export JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export PATH="$PATH:$JAVA_HOME/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
