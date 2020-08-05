@@ -27,10 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # set PATH, MANPATH, INFOPATH account for homebrew packages
-# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# This probably does not need to be here
-# export PATH="$PATH:$HOME/.rvm/bin"
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
