@@ -1,6 +1,6 @@
 [core]
 account = dominic@hiber.global
-project = hiber-production
+project = magnitudespace
 
 [compute]
 zone = europe-west4-c

@@ -5,7 +5,9 @@
 [commit]
 	gpgsign = true
 [alias]
-	up = pull --rebase --autostash
+	up = pull --rebase --autostash && git submodule update --init --recursive
+	undo = reset HEAD~1 --mixed
+	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 	set-upstream = \
        !git branch \
            --set-upstream-to=origin/`git symbolic-ref --short HEAD`
