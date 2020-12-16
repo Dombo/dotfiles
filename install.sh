@@ -63,7 +63,7 @@ git config --global push.default current
 
 ### DEVEX
 ### caps for ctrl
-gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 ### terminal keybindings
 cat ./gnome-terminal/org-gnome-terminal-legacy-keybindings.txt | dconf load /org/gnome/terminal/legacy/keybindings/
 cat ./gnome-terminal/org-gnome-terminal-legacy-menu-accelerator-enabled.txt | dconf load /org/gnome/terminal/legacy/
